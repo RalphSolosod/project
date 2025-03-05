@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Members - Bestea Coffee Shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cream: #F3E9DC;
+            --caramel: #C08552;
+            --brownie: #5E3023;
+            --coffee: #895737;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background-color: var(--cream);
+            color: var(--brownie);
+        }
+        
+        .navbar {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar a {
+            text-decoration: none;
+            color: #5E3023;
+            margin: 0 15px;
+            font-size: 14px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+        }
+        
+        .navbar a:hover {
+            text-decoration: underline;
+        }
+        
+        .navbar .logo img {
+            height: 40px;
+        }
+        
+        .hero {
+            background-color: var(--caramel);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .content-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        h2 {
+            color: var(--coffee);
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-align: center;
+        }
+        
+        p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .members-intro {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 60px;
+        }
+        
+        .members-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .member-card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .member-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .member-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        
+        .member-info {
+            padding: 20px;
+        }
+        
+        .member-name {
+            color: var(--brownie);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .member-role {
+            color: var(--caramel);
+            font-size: 16px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        
+        .member-bio {
+            font-size: 14px;
+            color: #333;
+        }
+        
+        .membership-section {
+            background-color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .membership-cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .membership-card {
+            background-color: var(--cream);
+            border-radius: 12px;
+            padding: 30px;
+            width: 100%;
+            max-width: 320px;
+            text-align: left;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .membership-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background-color: var(--caramel);
+        }
+        
+        .membership-card h3 {
+            color: var(--brownie);
+            margin: 15px 0;
+            font-size: 24px;
+        }
+        
+        .membership-price {
+            font-size: 36px;
+            color: var(--coffee);
+            margin: 15px 0;
+            font-weight: 700;
+        }
+        
+        .membership-price span {
+            font-size: 16px;
+            font-weight: 400;
+        }
+        
+        .membership-features {
+            list-style: none;
+            margin: 20px 0;
+        }
+        
+        .membership-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+        
+        .membership-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--caramel);
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--caramel);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            background-color: var(--brownie);
+            transform: translateY(-3px);
+        }
+        
+        .cta {
+            background-color: var(--coffee);
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .cta h2 {
+            color: white;
+        }
+        
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .d-flex {
+            display: flex;
+        }
+        
+        .flex-column {
+            flex-direction: column;
+        }
+        
+        .justify-content-between {
+            justify-content: space-between;
+        }
+        
+        .align-items-center {
+            align-items: center;
+        }
+        
+        .footer {
+      background-color: #c08552;
+     
+      padding: 20px 0;
+    }
+
+    .footer-logo img {
+      max-width: 150px;
+    }
+
+    .footer-social a {
+    
+      margin-left: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+
+    .footer-links-column a {
+      font-weight: bold;
+      color: #5e3023;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+
+    .footer-bottom {
+      background-color: #895737;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom-text {
+      font-size: 0.8em;
+      color: #5e3023;
+      font-weight: bolder;
+    }
+
+    .footer-bottom-top a {
+      
+      padding: 8px 15px;
+      border-radius: 5px;
+
+      transition: background-color 0.3s;
+    }
+        @media (min-width: 768px) {
+            .flex-md-row {
+                flex-direction: row;
+            }
+            
+            .mb-md-0 {
+                margin-bottom: 0;
+            }
+            
+            .text-md-start {
+                text-align: left;
+            }
+        }
+        
+        .mb-4 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .px-3 {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        
+        .mx-4 {
+            margin-left: 1.5rem;
+            margin-right: 1.5rem;
+        }
+        
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .rounded {
+            border-radius: 0.25rem;
+        }
+        
+        .text-white {
+            color: white;
+        }
+        
+
+        .testimonials {
+            padding: 40px 0;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 20px;
+            font-size: 80px;
+            color: var(--cream);
+            line-height: 1;
+            z-index: 0;
+        }
+        
+        .testimonial-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            margin-top: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .testimonial-author img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            object-fit: cover;
+        }
+        
+        .author-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .author-name {
+            font-weight: 600;
+            color: var(--brownie);
+        }
+        
+        .author-membership {
+            font-size: 14px;
+            color: var(--caramel);
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+            <a href="about.html">ABOUT US</a>
+            <a href="members.html">MEMBERS</a>
+            <div class="logo">
+                <a href="home.html"><img src="Logo.jpg" alt="Logo"></a>
+            </div>
+            <a href="Menu.html">MENU</a>
+            <a href="index.html">FORMS / FAQ</a>
+        </div>
+        
+    
+    <div class="hero">
+        <h1>BerTea Members</h1>
+        <p>Join our community of coffee and tea enthusiasts</p>
+    </div>
+    
+    <section class="content-section">
+        <div class="members-intro">
+            <h2>Our BerTea Community</h2>
+            <p>At BerTea, we believe in creating more than just a café – we're building a community. Our customers are the heart and soul of what we do, and we're proud to showcase our team and loyal patrons who make BerTea special.</p>
+        </div>
+        
+        <h2>Meet Our Team</h2>
+        <div class="members-grid">
+            <div class="member-card">
+                <img src="Owner.jpg" alt="Team Member" class="member-image">
+                <div class="member-info">
+                    <div class="member-name">Owner</div>
+                    <div class="member-bio">The Owner’s love for coffee began during her travels across South America, where she discovered the art of specialty brews. Inspired by her journey, she founded BerTea to create a warm and welcoming space for the community—bringing exceptional coffee, teas, and heartfelt connections to everyone who walks through the door.</div>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="Mascot.jpg" alt="Team Member" class="member-image">
+                <div class="member-info">
+                    <div class="member-name">Mascot</div>
+                    <div class="member-bio">Meet Dofu, our beloved mascot! While he may not have actual tea expertise, he brings something even better—pure joy and an unbeatable charm that brightens everyone's day. Whether greeting guests or sneaking treats, he's an essential part of our cozy café experience.</div>
+                </div>
+            </div>
+            
+            <div class="member-card">
+                <img src="Barista.jpg" alt="Team Member" class="member-image">
+                <div class="member-info">
+                    <div class="member-name">Barista</div>
+                    <div class="member-bio">Emma is a true coffee artisan, dedicated to crafting the perfect cup for every guest. With a deep passion for lattes and brewing techniques, she ensures each drink is expertly made, balancing rich flavors and smooth textures. Whether it's a bold espresso or a creamy latte, Emma's skill and dedication make every sip unforgettable.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="content-section testimonials">
+        <h2>Testimonials</h2>
+        <div class="members-grid">
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"From the moment you step into BerTea, you can feel the warmth and passion behind every cup. Their coffee are smooth and flavorful, and the attention to detail in every drink is unmatched. It’s more than just a café—it’s a community where every sip feels like home."</p>
+                    <div class="testimonial-author">
+                        <img src="Testimonial(1).jpg" alt="Member photo">
+                        <div class="author-info">
+                            <div class="author-name">Jessica T.</div>
+                            <div class="author-membership">Loyal Customer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-card">
+                <div class="testimonial-content">
+                    <p>"BerTea is my go-to café for the perfect latte! The cozy atmosphere, friendly staff, and expertly crafted drinks make every visit special. Whether I need a quiet place to work or just a great cup of coffee, Bestea never disappoints!"</p>
+                    <div class="testimonial-author">
+                        <img src="Testimonial.jpg" alt="Member photo">
+                        <div class="author-info">
+                            <div class="author-name">Marcus L.</div>
+                            <div class="author-membership">Loyal Customer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <h2>Be Part of Our BerTea Family Today</h2>
+        <p>"Coffee is more than a drink—it’s a moment of warmth, a spark of inspiration, and a hug in a cup."</p>
+    </section>
+    
+    <footer class="footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="footer-logo mb-4 mb-md-0">
+                <img src="Logo.jpg" alt="BerTea Café Logo" class="img-fluid rounded" style="max-width: 140px;">
+            </div>
+            <div class="footer-social mb-4 mb-md-0 px-3">
+                <a href="https://www.facebook.com/BerTeacafe" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="345" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-links d-flex flex-wrap text-center text-md-start">
+                <div class="footer-links-column mx-4"><a href="about.html">About us</a></div>
+                <div class="footer-links-column mx-4"><a href="members.html">Our Members</a></div>
+                <div class="footer-links-column mx-4"><a href="Menu.html">Menu</a></div>
+                <div class="footer-links-column mx-4"><a href="index.html">Forms</a></div>
+                <div class="footer-links-column mx-4">
+                    <a href="https://www.google.com/maps/place/BerTea+Cafe/@14.5458934,121.0605109,17z/data=!3m1!4b1!4m6!3m5!1s0x3397c963d4b32c03:0x4241df4b289a68dc!8m2!3d14.5458882!4d121.0630858!16s%2Fg%2F11rv5wnsqm?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D">Store Location</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="footer-bottom-text">&copy; 2025 BerTea Café. All Rights Reserved. | ABINSAY, CORCILLES, MACABALLUG, PALISOC, SOLOSOD</div>
+            <div><a href="#" class="btn btn-light btn-sm rounded-pill">Back to Top</a></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Function to show selected products and hide others
+        function showProducts(category) {
+            // Hide all product grids
+            document.querySelectorAll('.product-grid').forEach(grid => {
+                grid.classList.add('hidden');
+            });
+
+           
+            document.getElementById(category).classList.remove('hidden');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

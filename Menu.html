@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Bertea</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            background-image: url('Home (1).png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        .abt-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .text-section h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .product-dropdown {
+            text-align: left;
+            margin-bottom: 40px;
+            padding-left: 20px;
+        }
+
+        .product-dropdown .btn {
+            background-color: #283618;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 200px;
+            font-size: 1rem;
+            font-weight: 500;
+            margin-top: 45px; 
+        }
+
+        .product-dropdown .dropdown-menu {
+            background-color: white;
+            border: none;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .product-dropdown .dropdown-item {
+            color: #283618;
+            font-weight: 500;
+            padding: 10px 20px;
+        }
+
+        .product-dropdown .dropdown-item:hover {
+            background-color: rgba(40, 54, 24, 0.1);
+        }
+
+        /* Responsive Product Grid */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .product-card {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-card img {
+            width: 100%; /* Make images responsive */
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            color: #283618;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .product-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .product-card .price {
+            color: #dda15e;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .hidden {
+            display: none;
+        }
+        .navbar {
+            background-color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 30px;
+        }
+
+        .navbar a {
+        text-decoration: none;
+        color: #5E3023;  
+        margin: 0 15px;
+        font-size: 14px;
+        font-family: 'Poppins', sans-serif;
+        }
+
+        .navbar a:hover {
+        text-decoration: underline;
+        }
+
+        .navbar .logo img {
+        height: 40px;
+        }
+        .footer {
+      background-color: #c08552;
+     
+      padding: 20px 0;
+    }
+
+    .footer-logo img {
+      max-width: 150px;
+    }
+
+    .footer-social a {
+    
+      margin-left: 10px;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      padding: 20px 0;
+    }
+
+    .footer-links-column a {
+      font-weight: bold;
+      color: #5e3023;
+      text-decoration: none;
+      margin-bottom: 5px;
+    }
+
+    .footer-bottom {
+      background-color: #895737;
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-bottom-text {
+      font-size: 0.8em;
+      color: #5e3023;
+      font-weight: bolder;
+    }
+
+    .footer-bottom-top a {
+      
+      padding: 8px 15px;
+      border-radius: 5px;
+
+      transition: background-color 0.3s;
+    }
+    </style>
+    <div class="navbar">
+        <a href="about.html">ABOUT US</a>
+        <a href="members.html">MEMBERS</a>
+        <div class="logo">
+            <a href="home.html"><img src="Logo.jpg" alt="Logo"></a>
+        </div>
+        <a href="Menu.html">MENU</a>
+        <a href="index.html">FORMS / FAQ</a>
+    </div>
+    </head>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <body class="Menu">
+    
+        <!-- Product Section -->
+        <section class="product-section">
+            <div class="container">
+                <!-- Dropdown Menu -->
+                <div class="product-dropdown">
+                    <div class="dropdown">
+                        <button class="btn dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                            Select Category
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="dropdown-item" href="#" onclick="showProducts('coffee')">Coffee</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showProducts('snacks')">Snacks</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="showProducts('tea')">Tea</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            <!-- Beverage Cards -->
+            <div id="coffee" class="product-grid">
+                <div class="product-card">
+                    <img src="Dirty-Macha.jpg" alt="Dirty Macha"> <!-- Add your photo -->
+                    <h3>Dirty Macha</h3>
+                    <p> A bold blend of matcha and espresso for a rich, creamy fusion.</p>
+                    <p>Hot/Cold</p>
+                    <p class="price">Mini: ₱85</p>
+                    <p class="price">Moo: ₱120 </p>
+                </div>
+                <div class="product-card">
+                    <img src="Pumpkin-Spice.jpg" alt="Iced pumpkin spice latte"> <!-- Add your photo -->
+                    <h3>Iced pumpkin spice latte</h3>
+                    <p>A cozy blend of espresso, pumpkin spice, and creamy milk, served over ice</p>
+                    <p>Hot/Cold</p>
+                    <p class="price">Moo: ₱140 </p>
+                </div>
+                <div class="product-card">
+                    <img src="Okinawa-latte.jpg" alt="Okinawa iced latte"> <!-- Add your photo -->
+                    <h3>Okinawa Iced latte</h3>
+                    <p>A smooth and creamy milk tea infused with Okinawa brown sugar.</p>
+                    <p>Cold</p>
+                    <p class="price">Mini: ₱100</p>
+                    <p class="price">Moo: ₱140 </p>
+                </div>
+                 <div class="product-card">
+                    <img src="Dark-Mocha.jpg" alt="Dark Mocha"> <!-- Add your photo -->
+                    <h3>Dark Mocha</h3>
+                    <p>A bold espresso combined with rich dark chocolate and topped with velvety froth.</p>
+                    <p>Hot/Cold</p>
+                    <p class="price">Mini: ₱85</p>
+                    <p class="price">Moo: ₱120 </p>
+                </div>
+                  <div class="product-card">
+                    <img src="Latte.jpg" alt="Latte"> <!-- Add your photo -->
+                    <h3>Latte</h3>
+                    <p>A classic espresso drink topped with silky steamed milk for a balanced taste.</p>
+                    <p>Hot/Cold</p>
+                    <p class="price">Mini: ₱75</p>
+                    <p class="price">Moo: ₱105 </p>
+                </div>
+                                <div class="product-card">
+                    <img src="Americano.jpg" alt="Americano"> <!-- Add your photo -->
+                    <h3>Americano</h3>
+                    <p>A bold and smooth espresso-based drink diluted with hot water for a lighter coffee taste.</p>
+                    <p>Hot/Cold</p>
+                    <p class="price">Mini: ₱50</p>
+                    <p class="price">Moo: ₱65 </p>
+                </div>                       
+            </div>
+
+            <!-- Snacks -->
+            <div id="snacks" class="product-grid hidden">
+                <div class="product-card">
+                    <img src="classic-waffle.jpg" alt="Classic Waffle"> <!-- Add your photo -->
+                    <h3>Classic Waffle</h3>
+                    <p>Golden, crispy waffle served with maple syrup.</p>
+                    <p class="price">₱109</p>
+                </div>
+                <div class="product-card">
+                    <img src="spammy-baby.jpg" alt="Spammy-Baby"> <!-- Add your photo -->
+                    <h3>Spammy Baby</h3>
+                    <p>Crispy Spam slices served with a perfectly cooked egg on rice.</p>
+                    <p class="price">₱99</p>
+                </div>
+                                <div class="product-card">
+                    <img src="hungarian-waffle.jpg" alt="Hungarian Waffle"> <!-- Add your photo -->
+                    <h3>Hungarian Waffle</h3>
+                    <p>A savory waffle paired with Hungarian sausage and special seasonings.</p>
+                    <p class="price">₱179</p>
+                </div>
+                                <div class="product-card">
+                    <img src="pesto-pasta.jpg" alt="creamy pesto pasta"> <!-- Add your photo -->
+                    <h3>Creamy Pesto Pasta</h3>
+                    <p>Rich and creamy basil pesto sauce tossed with perfectly cooked pasta.</p>
+                    <p class="price">₱154</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Fries.jpg" alt="Fries"> <!-- Add your photo -->
+                    <h3>Fries</h3>
+                    <p>Crispy golden fries, perfect as a side or snack.</p>
+                    <p class="price">₱154</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Nachos.jpg" alt="Nachos"> <!-- Add your photo -->
+                    <h3>Nachos</h3>
+                    <p>Crunchy nachos served with melted cheese and toppings.</p>
+                    <p class="price">₱154</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Tuna-Aglio.jpg" alt="Tuna Aglio Olio"> <!-- Add your photo -->
+                    <h3>Tuna Aglio Olio</h3>
+                    <p>A light and flavorful pasta dish with tuna, garlic, and olive oil..</p>
+                    <p class="price">₱154</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Tuna-Bunwich.jpg" alt="Tuna Bunwich"> <!-- Add your photo -->
+                    <h3>Tuna Bunwich</h3>
+                    <p> A hearty tuna sandwich served with a soft bun with fresh ingredients.</p>
+                    <p class="price">₱154</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Fudge-Brownies.jpg" alt="Fudge Brownies"> <!-- Add your photo -->
+                    <h3>Fudge brownies</h3>
+                    <p> Fudgy, rich chocolate brownies with a crispy top and gooey center..</p>
+                    <p class="price">₱154</p>
+                </div>
+            </div>
+
+            <!-- Tea -->
+            <div id="tea" class="product-grid hidden">
+                                <div class="product-card">
+                    <img src="Strawberry-Mango.jpg" alt="Strawberry Mango"> <!-- Add your photo -->
+                    <h3>Strawberry & Mango Iced tea</h3>
+                    <p> A fruity blend of strawberry and mango with refreshing iced tea.</p>
+                    <p class="price">₱85</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Passion-Fruit.jpg" alt="Passion Fruit"> <!-- Add your photo -->
+                    <h3>Passion fruit Iced tea</h3>
+                    <p>A tropical passion fruit-infused iced tea with a tangy and sweet flavor.</p>
+                    <p class="price">₱85</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Salted-Caramel-Tea.jpg" alt="Salted Caramel tea"> <!-- Add your photo -->
+                    <h3>Salted Caramel Green tea</h3>
+                    <p>A unique mix of green tea with salted caramel for a sweet and salty twist.</p>
+                    <p class="price">₱85</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Melon-tea.jpg" alt="Green tea & melon Iced tea"> <!-- Add your photo -->
+                    <h3>Green tea & melon Iced tea</h3>
+                    <p>A refreshing combination of green tea and juicy melon flavors.</p>
+                    <p class="price">₱85</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Green-tea-lemonade.jpg" alt="Green tea lemonade"> <!-- Add your photo -->
+                    <h3>Green tea lemonade</h3>
+                    <p>A zesty lemonade with a green tea infusion for a refreshing citrusy taste.</p>
+                    <p class="price">₱85</p>
+                </div>
+                                <div class="product-card">
+                    <img src="Four-Red-Fruits-Lemonade.jpg" alt="Four Red Fruits Lemonade"> <!-- Add your photo -->
+                    <h3>Four Red Fruit’s Lemonade</h3>
+                    <p>A delicious blend of red berries and lemonade for a fruity and tangy delight..</p>
+                    <p class="price">₱85</p>
+                </div>
+            </div>
+
+    </section>
+    <footer class="footer">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="footer-logo mb-4 mb-md-0">
+                <img src="Logo.jpg" alt="BerTea Café Logo" class="img-fluid rounded" style="max-width: 140px;">
+            </div>
+            <div class="footer-social mb-4 mb-md-0 px-3">
+                <a href="https://www.facebook.com/BerTeacafe" class="text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="35" height="345" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="footer-links d-flex flex-wrap text-center text-md-start">
+                <div class="footer-links-column mx-4"><a href="about.html">About us</a></div>
+                <div class="footer-links-column mx-4"><a href="members.html">Our Members</a></div>
+                <div class="footer-links-column mx-4"><a href="Menu.html">Menu</a></div>
+                <div class="footer-links-column mx-4"><a href="index.html">Forms</a></div>
+                <div class="footer-links-column mx-4">
+                    <a href="https://www.google.com/maps/place/BerTea+Cafe/@14.5458934,121.0605109,17z/data=!3m1!4b1!4m6!3m5!1s0x3397c963d4b32c03:0x4241df4b289a68dc!8m2!3d14.5458882!4d121.0630858!16s%2Fg%2F11rv5wnsqm?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D">Store Location</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="footer-bottom">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="footer-bottom-text">&copy; 2025 BerTea Café. All Rights Reserved. | ABINSAY, CORCILLES, MACABALLUG, PALISOC, SOLOSOD</div>
+            <div><a href="#" class="btn btn-light btn-sm rounded-pill">Back to Top</a></div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script>
+        // Function to show selected products and hide others
+        function showProducts(category) {
+            // Hide all product grids
+            document.querySelectorAll('.product-grid').forEach(grid => {
+                grid.classList.add('hidden');
+            });
+
+           
+            document.getElementById(category).classList.remove('hidden');
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
+

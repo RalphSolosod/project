@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>berTea - Contact Us</title>
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <a href="about.html">ABOUT US</a>
+    <a href="members.html">MEMBERS</a>
+    <div class="logo">
+        <a href="home.html"><img src="Logo.jpg" alt="Logo"></a>
+    </div>
+    <a href="Menu.html">MENU</a>
+    <a href="index.html">FORMS / FAQ</a>
+</div>
+
+  <!-- Main Content -->
+   
+  <section class="main-content py-5">
+    <div class="container">
+      <div class="row g-4">
+        <!-- Contact Cards Section (Left Side) -->
+        <div class="col-md-4">
+          <div class="card contact-card shadow">
+            <div class="card-body text-center">
+              <h5 class="card-title">Call Us</h5>
+              <p class="card-text">We’re just a phone call away.</p>
+              <p class="card-text"><strong>Phone:</strong> +63 977 004 1428</p>
+            </div>
+          </div>
+          <div class="card contact-card shadow">
+            <div class="social-icons text-center mt-4">
+              <h5 class="card-title">Follow Us</h5>
+              <a href="https://www.facebook.com/BerTeacafe" target="_blank" class="text-decoration-none me-3">
+                <i class="fab fa-facebook fa-2x"></i> 
+              </a>
+              <a href="https://www.instagram.com/berteacafe?igsh=M2J6Z3pzcDM5NTBp" target="_blank" class="text-decoration-none">
+                <i class="fab fa-instagram fa-2x"></i> <!-- Instagram Icon -->
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Message Form Section (Right Side) -->
+        <div class="col-md-8">
+          <div class="card shadow">
+            <div class="card-body">
+              <h2 class="card-title mb-4">Send Us a Message</h2>
+              <form id="contactForm" action="https://formspree.io/f/meoeykll" method="POST">
+                <!-- Name Fields (Side by Side) -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="first-name" class="form-label">First Name</label>
+                    <input type="text" class="form-control" id="first-name"  name="first_name"  placeholder="First Name" required>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="last-name" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" id="last-name" name="last_name" placeholder="Last Name" required>
+                  </div>
+                </div>
+                <!-- Email and Phone Fields -->
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email"  name="email" placeholder="Email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">Phone Number</label>
+                  <input type="tel" class="form-control" id="phone"  name="phone"  placeholder="Phone Number" required>
+                </div>
+                <!-- Message Field -->
+                <div class="mb-3">
+                  <label for="message" class="form-label">Your Message</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+                </div>
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-brown w-100">Send</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ and Location Section -->
+<section class="faq-location py-5 bg-light">
+  <div class="container">
+    <div class="row g-4">
+      <!-- FAQ Section -->
+      <div class="col-md-6">
+        <div class="card h-100 shadow">
+          <div class="card-body">
+            <h2 class="card-title mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+              <!-- FAQ Item 1 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingOne">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    What are your best sellers?
+                  </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Spanish Latte <br>
+                    Double Chocolate <br>
+                    Salted Mocha Chip
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item 3 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingThree">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Do you have Wi-Fi available?
+                  </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    No, we don’t offer free Wi-Fi, as some customers tend to stay for extended periods.
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item 4 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFour">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                    What’s the best food to eat here?
+                  </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Sausage Waffles<br>
+                    Truffle Pasta
+                  </div>
+                </div>
+              </div>
+              <!-- FAQ Item 5 -->
+              <div class="accordion-item">
+                <h2 class="accordion-header" id="headingFive">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                    Where’s Gofu (the dog)?
+                  </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Gofu is our beloved mascot—energetic, playful, and the star of the show!
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!-- Location Section -->
+        <div class="col-md-6">
+          <div class="card h-100 shadow">
+            <div class="card-body">
+              <h2 class="card-title mb-4">Our Location</h2>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d10923.136338065919!2d121.06248094003497!3d14.547031112994155!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397c963d4b32c03%3A0x4241df4b289a68dc!2sBerTea%20Cafe!5e0!3m2!1sen!2sph!4v1740845416717!5m2!1sen!2sph" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  
+  <footer class="footer">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="footer-logo mb-4 mb-md-0">
+            <img src="Logo.jpg" alt="BerTea Café Logo" class="img-fluid rounded" style="max-width: 140px;">
+        </div>
+        <div class="footer-social mb-4 mb-md-0 px-3">
+            <a href="https://www.facebook.com/BerTeacafe" class="text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" width="35" height="345" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                    <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"/>
+                </svg>
+            </a>
+        </div>
+        <div class="footer-links d-flex flex-wrap text-center text-md-start">
+          <div class="footer-links-column mx-4"><a href="about.html">About us</a></div>
+          <div class="footer-links-column mx-4"><a href="members.html">Our Members</a></div>
+          <div class="footer-links-column mx-4"><a href="Menu.html">Menu</a></div>
+          <div class="footer-links-column mx-4"><a href="index.html">Forms</a></div>
+          <div class="footer-links-column mx-4">
+                <a href="https://www.google.com/maps/place/BerTea+Cafe/@14.5458934,121.0605109,17z/data=!3m1!4b1!4m6!3m5!1s0x3397c963d4b32c03:0x4241df4b289a68dc!8m2!3d14.5458882!4d121.0630858!16s%2Fg%2F11rv5wnsqm?entry=ttu&g_ep=EgoyMDI1MDIyNi4xIKXMDSoASAFQAw%3D%3D">Store Location</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<div class="footer-bottom">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+        <div class="footer-bottom-text">&copy; 2025 BerTea Café. All Rights Reserved. | ABINSAY, CORCILLES, MACABALLUG, PALISOC, SOLOSOD</div>
+        <div><a href="#" class="btn btn-light btn-sm rounded-pill">Back to Top</a></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>

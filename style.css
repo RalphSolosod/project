@@ -1,0 +1,168 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --brown: #6F4E37;
+  --white: #FFFFFF;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  
+}
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.176);
+
+}
+.footer {
+  background-color: #c08552;
+ 
+  padding: 20px 0;
+}
+
+.footer-logo img {
+  max-width: 150px;
+}
+
+.footer-social a {
+
+  margin-left: 10px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 20px 0;
+}
+
+.footer-links-column a {
+  font-weight: bold;
+  color: #5e3023;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer-bottom {
+  background-color: #895737;
+  padding: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-bottom-text {
+  font-size: 0.8em;
+  color: #5e3023;
+  font-weight: bolder;
+}
+
+.footer-bottom-top a {
+  
+  padding: 8px 15px;
+  border-radius: 5px;
+
+  transition: background-color 0.3s;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #5E3023;  
+  margin: 0 15px;
+  font-size: 14px;
+  font-family: 'Poppins';
+  font-weight: bold;
+
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
+
+.navbar .logo img {
+  height: 40px;
+}
+
+.bg-brown {
+  background-color: var(--brown);
+}
+
+.btn-brown {
+  background-color: var(--brown);
+  color: var(--white);
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-brown:hover {
+  background-color: #5a3b2b;
+}
+
+.contact-cards .card {
+  transition: transform 0.3s ease;
+}
+
+.contact-cards .card:hover {
+  transform: translateY(-10px);
+}
+
+.faq-location .card, .message-form .card {
+  border: none;
+  border-radius: 10px;
+}
+
+.accordion-button:not(.collapsed) {
+  background-color: var(--brown);
+  color: var(--white);
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+
+.accordion-button:hover {
+  background-color: rgba(111, 78, 55, 0.1);
+}
+
+
+.accordion-collapse {
+  transition: all 0.3s ease;
+}
+
+.contact-card {
+  width: 100%; 
+  padding: 20px; 
+  margin-bottom: 15px; 
+}
+/* Social Media Icons */
+.social-icons {
+  margin-top: 20px; 
+}
+
+.social-icons a {
+  transition: color 0.3s ease;
+}
+
+.social-icons a[href*="facebook.com"] {
+  color: #1877F2; 
+}
+
+.social-icons a[href*="facebook.com"]:hover {
+  color: #0d65d9;
+}
+
+
+.social-icons a[href*="instagram.com"] {
+  color: #E4405F; 
+}
+
+.social-icons a[href*="instagram.com"]:hover {
+  color: #d62d4f;
+}
